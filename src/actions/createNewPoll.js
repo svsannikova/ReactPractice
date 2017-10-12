@@ -1,7 +1,5 @@
 export function savePoll(text) {
-  const body = {
-    text,
-  }
+  const body = text
   console.log(body)
   return fetch('http://localhost:3000/polls', {
     method: 'POST',
@@ -12,12 +10,14 @@ export function savePoll(text) {
     cache: 'default',
     body: JSON.stringify(body),
   })
-    .then(r=>{
+    .then(r => {
       return r.json()
-    }).then(t=>{
+    })
+    .then(t => {
       console.log(t)
       return t
-    }).catch(err => {
+    })
+    .catch(err => {
       console.log(err.body)
     })
 }

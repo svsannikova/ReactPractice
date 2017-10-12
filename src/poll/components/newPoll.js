@@ -7,17 +7,23 @@ import {Colors, Button} from 'react-foundation'
 
 @observer
 export class NewPoll extends Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
       title: '',
-      listOfChoices: [],
+      listOfChoices: [
+        {
+          num: '',
+          name: '',
+        },
+      ],
     }
   }
-  
+
   render() {
     const handleSubmit = event => {
       event.preventDefault()
+      console.log(this.state)
       savePoll(this.state)
     }
     const handleChange = event => {
@@ -25,7 +31,10 @@ export class NewPoll extends Component {
       var value = []
       for (var i = 0, l = option.length; i < l; i++) {
         if (option[i].selected) {
-          value.push(option[i].value)
+          value.push({
+            num: String(i),
+            name: option[i].value,
+          })
         }
       }
       this.setState({listOfChoices: value})
@@ -33,26 +42,31 @@ export class NewPoll extends Component {
     return (
       <div className={css.component}>
         <h1 className={css.title}>New Poll</h1>
-        <form onSubmit={handleSubmit}  className={css.poll}>
+        <form onSubmit={handleSubmit} className={css.poll}>
           <div>
             <label>
-            Insert text
-              <input type="text" 
-                value = {this.state.title} 
-                onChange = {e => this.setState({title: e.target.value})}
-                placeholder="******" required/>
+              Insert text
+              <input
+                type="text"
+                value={this.state.title}
+                onChange={e => this.setState({title: e.target.value})}
+                placeholder="******"
+                required
+              />
             </label>
           </div>
           <div>
-            <select multiple={true} onChange = {handleChange}>             
+            <select multiple={true} onChange={handleChange}>
               <option value="First">First</option>
               <option value="Second">Second</option>
               <option value="Third">Third</option>
             </select>
           </div>
-          <Button type="submit" isExpanded>Submit</Button>
+          <Button type="submit" isExpanded>
+            Submit
+          </Button>
         </form>
-        <p/>
+        <p />
         <Link to="/">Back</Link>
       </div>
     )
