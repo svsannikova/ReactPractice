@@ -14,12 +14,26 @@
   font-family: var(--font-serif);
   font-size: rem(36px);
 }
+
 .poll {
   font-family: var(--font-serif);
+  width: 50%;
   font-size: rem(36px);
   font-weight: bold;
   padding: rem-calc(40 0);
   text-align: center;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+.box {
+  font-family: var(--font-serif);
+  width: 100%;
+  font-size: rem(36px);
+  font-weight: bold;
+  text-align: center;
+}
+
+.div {
+  padding: rem-calc(40 0);
 }
 
