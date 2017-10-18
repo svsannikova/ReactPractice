@@ -33,11 +33,12 @@
   font-weight: bold;
   text-align: left;
   clear: both;
-  margin-right:15px;
+  margin-right: 15px;
 }
+
 .input {
   position: relative;
-  float:right;
+  float: right;
   text-align: left;
   width: 80%;
   font-family: var(--font-serif);
@@ -48,6 +49,7 @@
 .div {
   padding: rem-calc(40 0);
 }
+
 .modal {
   position: fixed;
   top: 150px;
@@ -62,9 +64,10 @@
   background-color: rgba(45, 146, 141, 0.7);
   z-index: 1;
 }
+
 .button {
   position: absolute;
-  bottom:   2px;
+  bottom: 2px;
   background-color: rgb(255, 255, 255);
   border: none;
   color: rgb(38, 78, 90);
